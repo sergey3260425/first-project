@@ -1,23 +1,79 @@
-
 .page {
-min-width: 1100px;
-/* мы ещё не умеем делать мобильную версию сайта, */
-/* поэтому выше установлена минимальная ширина страницы */
-max-width: 1600px;
-/* выше установили ограничение по максимальной ширине */
-margin: 0 auto;
-/* выше для экранов больше 1600px отцентрировали весь контент */
-font-family: 'Helvetica Neue', Arial, sans-serif;
+ min-width: 1100px;
+ max-width: 1600px;
+ margin: 0 auto;
+ font-family: Helvetica Neue, Arial, sans-serif;
 }
 
 .header {
-height: 100vh;
-min-height: 600px;
-max-height: 756px;
-/* выше установили ограничения для секции */
+ height: 100vh;
+ min-height: 600px;
+ max-height: 756px;
+ display: flex;
+ align-items: center;
+ position: relative;
+ background-color: #f2f2f2;
+ overflow: hidden;
 }
 
-/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+.logo {
+height: 32px;
+width: 228px;
+}
+
+.logo_place_header {
+background-image: url(../images/logo_place_header.svg);
+position: absolute;
+top: 30px;
+left: 64px;
+z-index: 1;
+}
+
+.header__title {
+width: 730px;
+margin-left: 64px;
+align-items: center;
+font-size: 102px;
+font-weight: 600;
+line-height: 96px;
+color: #000000;
+}
+
+.header__subtitle {
+width: 388px;
+position: absolute;
+bottom: 30px;
+left: 64px;
+z-index: 3;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+}
+
+.link {
+text-decoration: none;
+transition: in linear;
+}
+
+.header__link {
+ color: #2f80ed;
+}
+
+.link:hover {
+opacity: 60%;
+}
+
+.header__main-illustration {
+position: absolute;
+bottom: 0;
+right: 0;
+height: 608px;
+width: 765px;
+background-image: url(../images/header-image.png);
+background-size: cover;
+z-index: 3;
+}
+
 .header__square-pic {
 height: 568px;
 width: 568px;
@@ -27,7 +83,80 @@ top: 64px;
 right: 0;
 }
 
-/* и элемента с модификатором вида ключ-значение */
+.description {
+padding: 100px 0 100px;
+}
+
+.two-columns {
+width: 80%;
+margin: auto;
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+}
+
+.two-columns__brief {
+width: 175px;
+line-height: 1.2;
+font-size: 18px;
+font-weight: 400;
+color: #2f80ed;
+}
+
+.two-columns__main-text {
+min-width: 784px;
+width: 80%;
+}
+
+.two-columns__paragraph {
+line-height: 34px;
+font-size: 24px;
+font-weight: 400;
+margin: 0 auto 30px;
+}
+
+.two-columns__span-accent {
+line-height: 34px;
+font-size: 24px;
+font-weight: 600;
+}
+
+.digits {
+display: block;
+padding: 50px 0 100px;
+}
+
+.section-title {
+width: 60%;
+margin: 0 auto 20px;
+text-align: center;
+line-height: 69px;
+font-size: 60px;
+font-weight: 600;
+}
+
+.section-subtitle {
+width: 60%;
+margin: auto;
+text-align: center;
+line-height: 34px;
+font-size: 24px;
+font-weight: 400;
+}
+
+.table {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+width: 1100px;
+margin: auto;
+}
+
+.table__cell {
+width: 250px;
+padding-top: 60px;
+}
+
 .table__cell_theme_dark {
 width: 200px;
 color: white;
@@ -53,15 +182,12 @@ margin-top: 20px;
 }
 
 .feynman {
-height: 890px;
-padding-top: 100px;
+height: 790px;
+padding-top: 80px;
 display: flex;
 flex-direction: column;
 position: relative;
-background-position: bottom left;
 background-color: #f2f2f2;
-background-image: url(../../images/feynman.png);
-background-repeat: no-repeat;
 }
 
 .feynman__title {
@@ -107,7 +233,7 @@ bottom: 0;
 left: 0;
 height: 637px;
 width: 867px;
-background-image: url(../images/feynman.png);
+background-image: url(../images/feinman.png);
 background-size: cover;
 }
 
@@ -122,7 +248,6 @@ color: #fff;
 .kaufman__triangle {
 background-image: url(../images/kaufman-triangle.svg);
 position: absolute;
-background-position: center;
 top: 0;
 right: -210px;
 height: 877px;
@@ -180,8 +305,8 @@ margin-right: 10px;
 line-height: 30px;
 font-size: 18px;
 font-weight: 600;
-margin: 0;
 color: white;
+margin: 0;
 }
 
 .footer__list-item {
@@ -189,6 +314,7 @@ line-height: 30px;
 font-size: 18px;
 font-weight: 400;
 }
+
 .footer__column-links {
 padding-left: 0;
 list-style: none;
@@ -211,10 +337,10 @@ opacity: .5;
 }
 
 .footer__column-link_YT::before {
-content: url(../images/youtube-icon.svg);
-width: 16px;
-height: 16px;
-margin-right: 10px;
+ content: url(../images/youtube-icon.svg);
+ width: 16px;
+ height: 16px;
+ margin-right: 10px;
 }
 
 .footer__column-link_vk::before {
@@ -230,3 +356,4 @@ width: 16px;
 height: 16px;
 margin-right: 10px;
 }
+
